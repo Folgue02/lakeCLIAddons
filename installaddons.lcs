@@ -1,0 +1,15 @@
+# This script installs all the addons in this folder
+
+# ------------------------
+# Tree addon
+# ------------------------
+cd tree
+at install installer.lci
+cd ..
+
+
+
+
+
+
+
