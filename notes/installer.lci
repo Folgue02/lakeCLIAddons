@@ -1,0 +1,16 @@
+{
+	"referenceCommand":"notes",	
+	"entryFile":"notes.py",
+	"files":{
+		"notes.py":"notes.py"
+	},
+	"help":{
+		"description":"",
+		"usage":{
+			"tree":"Displays the content of the current folder.",
+			"tree <path>":"Displays the content of <path>."
+		}
+	},
+	"directories":[],
+	"version":1.1
+}
