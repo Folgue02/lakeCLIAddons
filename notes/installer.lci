@@ -5,10 +5,11 @@
 		"notes.py":"notes.py"
 	},
 	"help":{
-		"description":"",
+		"description":"A simple application to create and remove notes.",
 		"usage":{
-			"tree":"Displays the content of the current folder.",
-			"tree <path>":"Displays the content of <path>."
+			"notes / notes list":"Displays all the written notes.",
+			"notes add <note>":"Adds a new note to the notes file.",
+			"notes remove <index>":"Removes the note associated with the index specified."
 		}
 	},
 	"directories":[],

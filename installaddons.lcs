@@ -7,7 +7,12 @@ cd tree
 at install installer.lci
 cd ..
 
-
+# ------------------------
+# Notes addon
+# ------------------------
+cd notes
+at install installer.lci
+cd ..
 
 
 

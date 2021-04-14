@@ -1,27 +1,35 @@
 #!/usr/bin/env python3
 import os
-from sys import argv as a
+from sys import platform, argv as a
+from getpass import getuser
 del a[0]
 
 __version__ = 1.0
 
 
-NOTE_FILE = os.path.join(os.getcwd(), "notes.txt")
+
+NOTE_FILE = os.path.join(f"C:\\Users\\{getuser()}\\" if platform == "win32" else f"/home/{getuser()}/", "notes.txt")
 
 def listNotes():
     noteContent = open(NOTE_FILE, "r").read().split("\n")
-    for index, line in enumerate(noteContent):
-        print(f"[ {'0'*(len(str(len(noteContent)))-len(str(index)))}{index} ]: {line}")
+
+
+    if noteContent == [""]:
+        print("The note file it's empty.")
+
+    else:
+        for index, line in enumerate(noteContent):
+            print(f"[ {'0'*(len(str(len(noteContent)))-len(str(index+1)))}{index+1} ]: {line}")
 
 
 def removeNote(index):
     content = open(NOTE_FILE, "r").read().split("\n")
 
-    if index > len(content) or index < 0:
+    if index-1 > len(content)-1 or index < 0:
         print("The index its out of range!")
 
     else:
-        del content[index]
+        del content[index-1]
         open(NOTE_FILE, "w").write("\n".join(content))
 
 

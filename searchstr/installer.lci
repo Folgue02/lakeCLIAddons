@@ -1,0 +1,15 @@
+{
+	"referenceCommand":"searchstr",	
+	"entryFile":"searchstr.py",
+	"files":{
+		"searchstr.py":"searchstr.py"
+	},
+	"help":{
+		"description":"Search for strings in files.",
+		"usage":{
+			"searchstr <file> <targetString>":"Search for <targetString> inside of <file> and display the lines with highlighting."
+		}
+	},
+	"directories":[],
+	"version":1.0
+}
