@@ -1,18 +1,26 @@
 # This script installs all the addons in this folder
 
-# ------------------------
 # Tree addon
-# ------------------------
 cd tree
 at install installer.lci
 cd ..
 
-# ------------------------
 # Notes addon
-# ------------------------
 cd notes
 at install installer.lci
 cd ..
+
+# Search string addon
+cd searchstr
+at install installer.lci
+cd ..
+
+# Which addon
+cd which
+at install installer.lci
+cd ..
+ 
+
 
 
 

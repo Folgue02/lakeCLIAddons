@@ -1,0 +1,15 @@
+{
+	"referenceCommand":"which",	
+	"entryFile":"which.py",
+	"files":{
+		"which.py":"which.py"
+	},
+	"help":{
+		"description":"Searches for the file specified in the 'path' environmental variable.",
+		"usage":{
+			"which <file>":"Looks for <file> in the 'path' environmental variable."
+		}
+	},
+	"directories":[],
+	"version":1.0
+}
