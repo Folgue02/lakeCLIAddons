@@ -1,0 +1,16 @@
+{
+	"referenceCommand":"devat",	
+	"entryFile":"devat.py",
+	"files":{
+		"devat.py":"devat.py",
+		"lib.py":"lib.py"
+	},
+	"help":{
+		"description":"Tool for lakeCLI addon development.",
+		"usage":{
+			"devat --help":"Show guide about the Devaloper Addon Tool."
+		}
+	},
+	"directories":[],
+	"version":1.0
+}
