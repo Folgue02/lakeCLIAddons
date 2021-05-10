@@ -20,7 +20,10 @@ cd which
 at install installer.lci
 cd ..
  
-
+# Developer Addon Tool addon
+cd devat
+at install installer.lci
+cd ..
 
 
 
