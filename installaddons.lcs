@@ -2,30 +2,32 @@
 
 # Tree addon
 cd tree
-at install installer.lci
+at install
 cd ..
 
 # Notes addon
 cd notes
-at install installer.lci
+at install
 cd ..
 
 # Search string addon
 cd searchstr
-at install installer.lci
+at install
 cd ..
 
 # Which addon
 cd which
-at install installer.lci
+at install
 cd ..
  
 # Developer Addon Tool addon
 cd devat
-at install installer.lci
+at install
 cd ..
 
-
+# WhereIs addon
+cd whereis
+at install
 
 
 

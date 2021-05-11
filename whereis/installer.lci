@@ -1,0 +1,14 @@
+{
+  "referenceCommand": "whereis",
+  "entryFile": "whereis.py",
+  "help": {
+    "description": "",
+    "usage": {}
+  },
+  "files": {
+    "whereis.py": "whereis.py",
+    "lib.py": "lib.py"
+  },
+  "directories": [],
+  "version":0.9 
+}
