@@ -7,7 +7,7 @@ def main():
     parser = argparse.ArgumentParser()
 
     parser.add_argument("file", type=str, help="File to read")
-    parser.add_argument("-i", "--indentation", help="Number of spaces for indentantion (default is 2)")
+    parser.add_argument("-i", "--indentation", type=int,help="Number of spaces for indentantion (default is 2)")
     arguments = parser.parse_args()
 
     # Define target
