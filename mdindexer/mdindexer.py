@@ -24,6 +24,7 @@ def main():
         content = open(target, "r").read()
     except Exception as e:
         print("Cannot read the file due to the following reason: " + str(e))
+        return
 
     result = {}
 
