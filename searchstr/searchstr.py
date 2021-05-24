@@ -11,7 +11,7 @@ def main():
     parser.add_argument("targetString", help="String to search.", type=str)
 
     args = parser.parse_args()
-
+url
     if not os.path.isfile(args.file):
         print(f"The file '{args.file}' doesn't exist.")
 

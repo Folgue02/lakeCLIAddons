@@ -1,0 +1,15 @@
+{
+  "referenceCommand": "mdindexer",
+  "entryFile": "mdindexer.py",
+  "help": {
+    "description": "Displays an MD file index based on the headers of the mentioned file.",
+    "usage": {
+		"mdindexer <file> -i <indentation>":"Displays the index of <file> with an indentation of <indentation>"
+	}
+  },
+  "files": {
+    "mdindexer.py": "mdindexer.py"
+  },
+  "directories": [],
+  "version": 0.8 
+}
