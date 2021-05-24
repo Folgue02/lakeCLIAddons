@@ -28,6 +28,12 @@ cd ..
 # WhereIs addon
 cd whereis
 at install
+cd ..
+
+# mdindexer addon
+cd mdindexer
+at install
+cd ..
 
 
 
