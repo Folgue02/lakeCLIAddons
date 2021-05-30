@@ -15,6 +15,7 @@ def error(*args):
 
 
 def display_match(match:match, lines:bool, file_name:bool):
+    # Function in charge of displaying the matches found in the files.
     line_buffer = ""
 
     if lines:
@@ -27,6 +28,7 @@ def display_match(match:match, lines:bool, file_name:bool):
 
 
 def iterate_dirs(arguments:argparse.ArgumentParser) -> None:
+    # Iterates through directories and search for the string through them
     try:
         elements = os.listdir(arguments.target)
     except Exception:
@@ -37,7 +39,12 @@ def iterate_dirs(arguments:argparse.ArgumentParser) -> None:
         
         # Read file
         if os.path.isfile(os.path.join(arguments.target, x)):
-            result = str_search(arguments.pattern, os.path.join(arguments.target, x))
+            try:
+                result = str_search(arguments.pattern, os.path.join(arguments.target, x))
+            except UnicodeDecodeError:
+                if not arguments.ignore_error:
+                    error(f"Cannot decode file '{os.path.join(arguments.target, x)}'")
+
 
             for r in result.matches:
                 display_match(r, arguments.lines, os.path.join(arguments.target, x))
@@ -62,6 +69,7 @@ def main():
     parser.add_argument("target", type=str, help="Target to look for the pattern")
     parser.add_argument("-l", "--lines",  action="store_true", help="Display line numbers")
     parser.add_argument("-n", "--filename",  action="store_true", help="Display file name")
+    parser.add_argument("-i", "--ignore-error", action="store_true", help="If enabled, avoids displaying errors.")
 
     arguments = parser.parse_args()
 
