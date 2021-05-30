@@ -1,15 +1,18 @@
 {
-	"referenceCommand":"searchstr",	
-	"entryFile":"searchstr.py",
-	"files":{
-		"searchstr.py":"searchstr.py"
-	},
-	"help":{
-		"description":"Search for strings in files.",
-		"usage":{
-			"searchstr <file> <targetString>":"Search for <targetString> inside of <file> and display the lines with highlighting."
-		}
-	},
-	"directories":[],
-	"version":1.0
+  "referenceCommand": "searchstr",
+  "entryFile": "searchstr.py",
+  "files": {
+    "searchstr.py": "searchstr.py",
+    "result.py": "result.py"
+  },
+  "help": {
+    "description": "Search for strings in files.",
+    "usage": {
+      "searchstr <target_string> <file>": "Search for <target_string> inside of <file> and display the lines with highlighting.",
+      "searchstr <target_string> <file> -l": "Display lines.",
+      "searchstr <target_string> <file> -n": "Display file names."
+    }
+  },
+  "directories": [],
+  "version": 1.1
 }
