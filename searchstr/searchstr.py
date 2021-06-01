@@ -11,7 +11,7 @@ from copy import deepcopy as dp
 
 def error(*args):
     for a in args:
-        print(f"{colored('error:', 'red')}: {a}")
+        print(f"{colored('error', 'red')}: {a}")
 
 
 def display_match(match:match, lines:bool, file_name:bool):
@@ -40,11 +40,14 @@ def iterate_dirs(arguments:argparse.ArgumentParser) -> None:
         # Read file
         if os.path.isfile(os.path.join(arguments.target, x)):
             try:
-                result = str_search(arguments.pattern, os.path.join(arguments.target, x))
+                result = str_search(arguments.pattern, os.path.join(arguments.target, x), case_sensitive=arguments.case_sensitive)
             except UnicodeDecodeError:
                 if not arguments.ignore_error:
                     error(f"Cannot decode file '{os.path.join(arguments.target, x)}'")
+                    continue
 
+                else:
+                    continue
 
             for r in result.matches:
                 display_match(r, arguments.lines, os.path.join(arguments.target, x))
@@ -69,7 +72,8 @@ def main():
     parser.add_argument("target", type=str, help="Target to look for the pattern")
     parser.add_argument("-l", "--lines",  action="store_true", help="Display line numbers")
     parser.add_argument("-n", "--filename",  action="store_true", help="Display file name")
-    parser.add_argument("-i", "--ignore-error", action="store_true", help="If enabled, avoids displaying errors.")
+    parser.add_argument("-i", "--ignore-error", action="store_true", help="If enabled, avoids displaying errors")
+    parser.add_argument("-c", "--case-sensitive", action="store_true", help="Enables case sensitive search")
 
     arguments = parser.parse_args()
 
@@ -81,7 +85,7 @@ def main():
         # Check single file
         if os.path.isfile(arguments.target):
             try:
-                result = str_search(arguments.pattern, arguments.target)
+                result = str_search(arguments.pattern, arguments.target, case_sensitive=arguments.case_sensitive)
             except UnicodeDecodeError:
                 error("Cannot decode file '{arguments.target}'.")
 

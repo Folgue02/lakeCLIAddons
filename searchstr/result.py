@@ -17,9 +17,10 @@ class match:
 
 
 class str_search:
-    def __init__(self, pattern, target_file):
+    def __init__(self, pattern, target_file, case_sensitive=False):
         self.pattern = pattern
         self.target_file = target_file
+        self.case_sensitive = case_sensitive
 
         if not os.path.exists(self.target_file):
             raise FileNotFoundError(f"File '{self.target_file}' doesn't exist.")
@@ -35,7 +36,7 @@ class str_search:
         # Finds the matches of a pattern compared to the lines to an specified file.
         # Returns a dictionary with the matches
         for index, line in enumerate(self.target_content.split("\n")):
-            if self.pattern in line:
+            if (self.pattern if self.case_sensitive else self.pattern.upper()) in (line if self.case_sensitive else line.upper()):
                 self.matches.append(match(line, index+1, self.pattern, self.target_file))
 
             else:
